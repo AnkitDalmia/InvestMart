@@ -1,2 +1,1 @@
-# InvestMart
-InvestMart By Aniket
+# Aniket_Investmart
