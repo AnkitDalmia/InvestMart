@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Financial Calculators - InvestMart</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #calculator-view, #grid-view {
+            animation: fadeIn 0.3s ease-out;
+        }
+        .calc-input::-webkit-outer-spin-button,
+        .calc-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .calc-input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="min-h-screen bg-primary font-sans text-white">
+            <!-- Header -->
+            <header class="bg-white/5 border-b border-white/10 text-white">
+                <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="bg-secondary/20 border border-secondary/40 rounded-xl px-2 py-1">
+                            <img alt="InvestMart" class="h-9 w-auto object-contain" src="\images\Invest$Mart financial logo design.png">
+                        </div>
+                        <span class="text-sm font-semibold text-secondary group-hover:text-secondary/80 transition-colors hidden sm:block">← Back to Home</span>
+                    </a>
+                    <div class="text-center">
+                        <h1 class="text-lg font-serif font-bold text-white">Financial Calculators</h1>
+                        <p class="text-xs text-slate-400">Plan smarter. Invest better.</p>
+                    </div>
+                    <div class="w-24 hidden sm:block"></div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <div class="container mx-auto px-6 py-10 max-w-4xl">
+
+                <!-- Grid View -->
+                <div id="grid-view">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-serif text-white font-bold mb-3">Choose a Calculator</h2>
+                        <p class="text-slate-400">Free tools to help you make informed investment decisions.</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <!-- SIP -->
+                        <button onclick="showCalculator('sip')" class="flex flex-col items-center text-center bg-white/10 border border-white/15 rounded-2xl p-6 gap-4 hover:bg-white/15 transition-all group" tabindex="0">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-md">
+                                <span class="text-3xl">📈</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-sm leading-tight mb-1">SIP Calculator</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">Plan your monthly SIP &amp; watch wealth grow</p>
+                            </div>
+                        </button>
+                        <!-- Lumpsum -->
+                        <button onclick="showCalculator('lumpsum')" class="flex flex-col items-center text-center bg-white/10 border border-white/15 rounded-2xl p-6 gap-4 hover:bg-white/15 transition-all group" tabindex="0">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center shadow-md">
+                                <span class="text-3xl">💰</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-sm leading-tight mb-1">Lumpsum Calculator</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">See returns on a one-time investment</p>
+                            </div>
+                        </button>
+                        <!-- CAGR -->
+                        <button onclick="showCalculator('cagr')" class="flex flex-col items-center text-center bg-white/10 border border-white/15 rounded-2xl p-6 gap-4 hover:bg-white/15 transition-all group" tabindex="0">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 flex items-center justify-center shadow-md">
+                                <span class="text-3xl">📊</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-sm leading-tight mb-1">CAGR Calculator</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">Find the real growth rate of any investment</p>
+                            </div>
+                        </button>
+                        <!-- Retirement -->
+                        <button onclick="showCalculator('retirement')" class="flex flex-col items-center text-center bg-white/10 border border-white/15 rounded-2xl p-6 gap-4 hover:bg-white/15 transition-all group" tabindex="0">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-700 flex items-center justify-center shadow-md">
+                                <span class="text-3xl">🏖️</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-sm leading-tight mb-1">Retirement Calculator</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">Know how much corpus you'll need to retire</p>
+                            </div>
+                        </button>
+                    </div>
+                    <p class="text-center text-xs text-slate-500 mt-10 leading-relaxed max-w-xl mx-auto">These calculators provide estimates for educational purposes only. Actual returns may vary based on market conditions. Please consult a financial advisor before making investment decisions.</p>
+                </div>
+
+                <!-- Calculator View (hidden by default) -->
+                <div id="calculator-view" style="display: none;" class="max-w-lg mx-auto">
+                    <button onclick="showGrid()" class="flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-secondary transition-colors mb-6" style="background:none;border:none;cursor:pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                        All Calculators
+                    </button>
+
+                    <div class="bg-white/10 border border-white/15 rounded-2xl p-6 md:p-8">
+                        <!-- Calculator Header -->
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="text-4xl" id="calc-emoji"></span>
+                            <div>
+                                <h2 class="text-xl font-serif font-bold text-white" id="calc-title"></h2>
+                                <p class="text-sm text-slate-400" id="calc-desc"></p>
+                            </div>
+                        </div>
+
+                        <!-- SIP Calculator -->
+                        <div id="sip-calc" class="calc-form" style="display:none;">
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Monthly SIP Amount (₹)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="sip-amount" value="5000" placeholder="5000" oninput="calculateSIP()">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Expected Annual Return (%)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="sip-return" value="12" placeholder="12" oninput="calculateSIP()">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Time Period (Years)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="sip-years" value="10" placeholder="10" oninput="calculateSIP()">
+                                </div>
+                                <div class="bg-secondary/10 border border-secondary/30 rounded-2xl p-5 space-y-3 mt-2" id="sip-results"></div>
+                            </div>
+                        </div>
+
+                        <!-- Lumpsum Calculator -->
+                        <div id="lumpsum-calc" class="calc-form" style="display:none;">
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Investment Amount (₹)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="lumpsum-amount" value="100000" placeholder="100000" oninput="calculateLumpsum()">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Expected Annual Return (%)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="lumpsum-return" value="12" placeholder="12" oninput="calculateLumpsum()">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Time Period (Years)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="lumpsum-years" value="10" placeholder="10" oninput="calculateLumpsum()">
+                                </div>
+                                <div class="bg-secondary/10 border border-secondary/30 rounded-2xl p-5 space-y-3 mt-2" id="lumpsum-results"></div>
+                            </div>
+                        </div>
+
+                        <!-- CAGR Calculator -->
+                        <div id="cagr-calc" class="calc-form" style="display:none;">
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Initial Investment Value (₹)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="cagr-initial" value="100000" placeholder="100000" oninput="calculateCAGR()">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Final Investment Value (₹)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="cagr-final" value="200000" placeholder="200000" oninput="calculateCAGR()">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Time Period (Years)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="cagr-years" value="5" placeholder="5" oninput="calculateCAGR()">
+                                </div>
+                                <div class="bg-secondary/10 border border-secondary/30 rounded-2xl p-5 space-y-3 mt-2" id="cagr-results"></div>
+                            </div>
+                        </div>
+
+                        <!-- Retirement Calculator -->
+                        <div id="retirement-calc" class="calc-form" style="display:none;">
+                            <div class="space-y-5">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-300 mb-1.5">Current Age</label>
+                                        <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="ret-current-age" value="30" placeholder="30" oninput="calculateRetirement()">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-300 mb-1.5">Retirement Age</label>
+                                        <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="ret-retire-age" value="60" placeholder="60" oninput="calculateRetirement()">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-slate-300 mb-1.5">Current Monthly Expenses (₹)</label>
+                                    <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="ret-expenses" value="50000" placeholder="50000" oninput="calculateRetirement()">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-300 mb-1.5">Inflation Rate (%)</label>
+                                        <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="ret-inflation" value="6" placeholder="6" oninput="calculateRetirement()">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-300 mb-1.5">Expected Returns (%)</label>
+                                        <input type="number" class="calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500" id="ret-returns" value="12" placeholder="12" oninput="calculateRetirement()">
+                                    </div>
+                                </div>
+                                <div class="bg-secondary/10 border border-secondary/30 rounded-2xl p-5 space-y-3 mt-2" id="retirement-results"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA after calculator -->
+                    <div class="mt-6 bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
+                        <p class="text-sm text-slate-300 mb-3">Want a personalised plan based on these numbers?</p>
+                        <a href="tel:7014224048" class="inline-flex items-center gap-2 bg-secondary text-primary font-bold px-6 py-2.5 rounded-xl text-sm hover:bg-secondary/90 transition-colors">📞 Talk to Aniket · 70142-24048</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function formatCurrency(amount) {
+            if (amount >= 1e7) return '₹' + (amount / 1e7).toFixed(2) + ' Cr';
+            if (amount >= 1e5) return '₹' + (amount / 1e5).toFixed(2) + ' L';
+            return '₹' + Math.round(amount).toLocaleString('en-IN');
+        }
+
+        function renderResults(containerId, rows) {
+            var html = '';
+            rows.forEach(function(row) {
+                var cls = row.accent ? 'flex justify-between items-center border-t border-secondary/20 pt-3 mt-1' : 'flex justify-between items-center';
+                var labelCls = row.accent ? 'text-sm text-secondary font-bold' : 'text-sm text-slate-400';
+                var valueCls = row.accent ? 'font-bold font-serif text-secondary text-xl' : 'font-bold font-serif text-white text-base';
+                html += '<div class="' + cls + '"><span class="' + labelCls + '">' + row.label + '</span><span class="' + valueCls + '">' + row.value + '</span></div>';
+            });
+            document.getElementById(containerId).innerHTML = html;
+        }
+
+        var calculators = {
+            sip: { emoji: '📈', title: 'SIP Calculator', desc: 'Plan your monthly SIP & watch wealth grow' },
+            lumpsum: { emoji: '💰', title: 'Lumpsum Calculator', desc: 'See returns on a one-time investment' },
+            cagr: { emoji: '📊', title: 'CAGR Calculator', desc: 'Find the real growth rate of any investment' },
+            retirement: { emoji: '🏖️', title: 'Retirement Calculator', desc: "Know how much corpus you'll need to retire" }
+        };
+
+        function showCalculator(type) {
+            document.getElementById('grid-view').style.display = 'none';
+            var cv = document.getElementById('calculator-view');
+            cv.style.display = 'block';
+            cv.style.animation = 'none';
+            void cv.offsetHeight;
+            cv.style.animation = 'fadeIn 0.3s ease-out';
+
+            var calc = calculators[type];
+            document.getElementById('calc-emoji').textContent = calc.emoji;
+            document.getElementById('calc-title').textContent = calc.title;
+            document.getElementById('calc-desc').textContent = calc.desc;
+
+            document.querySelectorAll('.calc-form').forEach(function(f) { f.style.display = 'none'; });
+            document.getElementById(type + '-calc').style.display = 'block';
+
+            if (type === 'sip') calculateSIP();
+            else if (type === 'lumpsum') calculateLumpsum();
+            else if (type === 'cagr') calculateCAGR();
+            else if (type === 'retirement') calculateRetirement();
+        }
+
+        function showGrid() {
+            document.getElementById('calculator-view').style.display = 'none';
+            var gv = document.getElementById('grid-view');
+            gv.style.display = 'block';
+            gv.style.animation = 'none';
+            void gv.offsetHeight;
+            gv.style.animation = 'fadeIn 0.3s ease-out';
+        }
+
+        function calculateSIP() {
+            var P = parseFloat(document.getElementById('sip-amount').value) || 0;
+            var r = (parseFloat(document.getElementById('sip-return').value) || 0) / 100 / 12;
+            var n = (parseFloat(document.getElementById('sip-years').value) || 0) * 12;
+            var M = r > 0 ? P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r) : P * n;
+            var invested = P * n;
+            renderResults('sip-results', [
+                { label: 'Total Invested', value: formatCurrency(invested) },
+                { label: 'Wealth Gained', value: formatCurrency(M - invested) },
+                { label: 'Maturity Amount', value: formatCurrency(M), accent: true }
+            ]);
+        }
+
+        function calculateLumpsum() {
+            var P = parseFloat(document.getElementById('lumpsum-amount').value) || 0;
+            var r = parseFloat(document.getElementById('lumpsum-return').value) || 0;
+            var n = parseFloat(document.getElementById('lumpsum-years').value) || 0;
+            var M = P * Math.pow(1 + r / 100, n);
+            renderResults('lumpsum-results', [
+                { label: 'Amount Invested', value: formatCurrency(P) },
+                { label: 'Profit Earned', value: formatCurrency(M - P) },
+                { label: 'Maturity Amount', value: formatCurrency(M), accent: true }
+            ]);
+        }
+
+        function calculateCAGR() {
+            var initial = parseFloat(document.getElementById('cagr-initial').value) || 0;
+            var final_ = parseFloat(document.getElementById('cagr-final').value) || 0;
+            var years = parseFloat(document.getElementById('cagr-years').value) || 1;
+            var cagr = initial > 0 && final_ > 0 ? (Math.pow(final_ / initial, 1 / years) - 1) * 100 : 0;
+            var gain = final_ - initial;
+            renderResults('cagr-results', [
+                { label: 'Total Gain', value: formatCurrency(gain) },
+                { label: 'Absolute Return', value: (initial > 0 ? (gain / initial * 100).toFixed(1) : '0') + '%' },
+                { label: 'CAGR', value: cagr.toFixed(2) + '% per year', accent: true }
+            ]);
+        }
+
+        function calculateRetirement() {
+            var age = parseFloat(document.getElementById('ret-current-age').value) || 0;
+            var retAge = parseFloat(document.getElementById('ret-retire-age').value) || 0;
+            var exp = parseFloat(document.getElementById('ret-expenses').value) || 0;
+            var inf = (parseFloat(document.getElementById('ret-inflation').value) || 0) / 100;
+            var ret = (parseFloat(document.getElementById('ret-returns').value) || 0) / 100;
+            var yrs = retAge - age;
+            var futExp = exp * Math.pow(1 + inf, yrs);
+            var annExp = futExp * 12;
+            var realRate = (ret - inf) / (1 + inf);
+            var retYrs = 25;
+            var corpus = realRate > 0 ? annExp * ((1 - Math.pow(1 + realRate, -retYrs)) / realRate) : annExp * retYrs;
+            renderResults('retirement-results', [
+                { label: 'Monthly Expense at Retirement', value: formatCurrency(futExp) },
+                { label: 'Years to Retirement', value: yrs + ' years' },
+                { label: 'Retirement Corpus Needed', value: formatCurrency(corpus), accent: true }
+            ]);
+        }
+    </script>
+</body>
+</html>

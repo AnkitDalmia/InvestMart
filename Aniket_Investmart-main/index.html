@@ -1,0 +1,587 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>InvestMart</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300..800&display=swap"
+    rel="stylesheet">
+  <script type="module" crossorigin="" src="/assets/index-CXts7H5m.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @font-face {
+      font-family: 'Open Sans Regular';
+      font-style: normal;
+      font-weight: 400;
+      src: url('chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/open-sans-v18-latin-regular.woff');
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: 'Open Sans Bold';
+      font-style: normal;
+      font-weight: 800;
+      src: url('chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/OpenSans-Bold.woff');
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: 'Open Sans ExtraBold';
+      font-style: normal;
+      font-weight: 800;
+      src: url('chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/open-sans-v18-latin-800.woff');
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div
+      class="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-secondary selection:text-white overflow-x-hidden">
+      <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/50">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+          <div class="flex items-center">
+            <div class="bg-primary rounded-xl px-3 py-2 flex flex-col items-center gap-0.5"><img alt="InvestMart"
+                class="h-10 w-auto object-contain" src="\images\Invest$Mart financial logo design.png"><span
+                class="text-[8px] font-bold tracking-widest text-secondary uppercase leading-none">Invest Smart with
+                InvestMart</span></div>
+          </div>
+          <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#services"
+              class="hover:text-secondary transition-colors">Services</a>
+              <a href="#about" class="hover:text-secondary transition-colors">About</a>
+              <a href="#process"
+              class="hover:text-secondary transition-colors">Our Process</a><a href="calculator.html"
+              class="flex items-center gap-1.5 bg-secondary text-primary px-3 py-1.5 rounded-lg font-bold hover:bg-secondary/90 transition-colors text-xs">🧮
+              Financial Calculator</a></div><a href="#contact"
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover-elevate active-elevate-2 border border-primary-border min-h-9 py-2 bg-primary hover:bg-primary/90 text-white rounded-none px-5 text-sm">Talk
+            to Expert Now</a>
+        </div>
+      </header>
+      <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-primary text-white">
+        <div class="absolute inset-0 z-0 opacity-20"><img alt="Abstract Financial Background"
+            class="w-full h-full object-cover object-center" src="/hero-bg.png">
+          <div class="absolute inset-0 bg-primary/80"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="max-w-3xl">
+            <div style="opacity: 1;">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-sm mb-6 text-slate-200"
+                style="opacity: 1; transform: none;"><span class="w-2 h-2 rounded-full bg-secondary"></span>Strategy
+                Over Emotion</div>
+              <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6"
+                style="opacity: 1; transform: none;">Expert Guidance.<br><span class="text-secondary">Smart
+                  Investments.</span><br>Real Growth.</h1>
+              <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed"
+                style="opacity: 1; transform: none;">5+ years of market experience with certified research expertise
+                helping you invest in equity, mutual funds, bonds, and insurance with clarity and confidence.</p>
+              <div class="flex flex-col sm:flex-row gap-4" style="opacity: 1; transform: none;">
+                <div class="flex flex-col gap-1">
+                  <button onclick="window.location.href='#contact'"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover-elevate active-elevate-2 border border-primary-border min-h-10 bg-secondary hover:bg-secondary/90 text-primary text-base rounded-none h-14 px-8 font-semibold">Book
+                    Your Free Consultation
+                  </button>
+                </div><button onclick="window.location.href='#services'"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover-elevate active-elevate-2 border [border-color:var(--button-outline)] shadow-xs active:shadow-none min-h-10 border-white/30 text-white hover:bg-white/10 hover:text-white rounded-none h-14 px-8 text-base">Get
+                  Your Financial Plan</button>
+              </div>
+              <p class="text-sm text-slate-400 mt-3 flex items-center gap-2" style="opacity: 1; transform: none;"><span
+                  class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>Free consultation.&nbsp;<span
+                  class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>No product selling.&nbsp;<span
+                  class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>Only clarity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-white border-b border-slate-200">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="flex flex-col items-center text-center gap-3">
+              <div
+                class="w-12 h-12 bg-slate-50 text-secondary rounded-full flex items-center justify-center border border-slate-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-trending-up w-6 h-6" aria-hidden="true">
+                  <path d="M16 7h6v6"></path>
+                  <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                </svg></div><span class="font-serif font-semibold text-primary">5+ Years Market Experience</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-3">
+              <div
+                class="w-12 h-12 bg-slate-50 text-secondary rounded-full flex items-center justify-center border border-slate-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shield-check w-6 h-6" aria-hidden="true">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                  </path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg></div><span class="font-serif font-semibold text-primary">NISM Certified Research</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-3">
+              <div
+                class="w-12 h-12 bg-slate-50 text-secondary rounded-full flex items-center justify-center border border-slate-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-target w-6 h-6" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg></div><span class="font-serif font-semibold text-primary">Goal-Based Planning</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-3">
+              <div
+                class="w-12 h-12 bg-slate-50 text-secondary rounded-full flex items-center justify-center border border-slate-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-circle-check w-6 h-6" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg></div><span class="font-serif font-semibold text-primary">Transparent Advice</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-4xl mx-auto text-center">
+            <div style="opacity: 1; transform: none;">
+              <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-4">Our Philosophy</h2>
+              <h3 class="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">"We don't push products —
+                <br><span class="italic text-slate-500 font-light">we build financial clarity.</span>"</h3>
+              <p class="text-xl text-slate-600 max-w-2xl mx-auto">Most people invest randomly. We help you invest with
+                purpose, strategy, and discipline. From confusion to clarity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-20 bg-primary text-white overflow-hidden relative">
+        <div class="absolute inset-0 opacity-5">
+          <div
+            class="absolute top-0 left-0 w-96 h-96 bg-secondary rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+          </div>
+          <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+          </div>
+        </div>
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+          <div class="text-center" style="opacity: 1; transform: none;"><span
+              class="text-secondary text-6xl font-serif leading-none select-none">"</span>
+            <h3 class="text-2xl md:text-4xl font-serif font-bold text-white leading-snug -mt-4 mb-6">A few years ago, I
+              was exactly where you are today —<br class="hidden md:block"><span class="text-secondary italic">
+                confused, unsure, and searching for the right financial path.</span></h3>
+            <div class="grid md:grid-cols-3 gap-6 text-left mt-10 mb-10">
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div class="text-3xl mb-3">💭</div>
+                <h4 class="font-bold text-secondary mb-2">The Confusion</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">I had money saved, but no idea where to put it. Every
+                  tip I followed led nowhere. Every market swing kept me up at night.</p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div class="text-3xl mb-3">📚</div>
+                <h4 class="font-bold text-secondary mb-2">The Journey</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">I spent years studying — CA, CFA, NISM — not just to
+                  earn certificates, but to truly understand how wealth is built and protected.</p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <div class="text-3xl mb-3">🤝</div>
+                <h4 class="font-bold text-secondary mb-2">The Mission</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">Today, my mission is simple: make sure you never have
+                  to figure it out alone. No confusion. No guesswork. Just clarity.</p>
+              </div>
+            </div>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">At InvestMart, we don't just manage your
+              money — we become your financial companion. Guiding you from confusion to clarity, with knowledge,
+              honesty, and genuine care.</p>
+            <p class="mt-6 font-serif text-secondary text-lg font-semibold">— Aniket Dalmia, Founder · InvestMart</p>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="mb-16 md:flex justify-between items-end">
+            <div class="max-w-2xl">
+              <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-4">Core Services</h2>
+              <h3 class="text-4xl font-serif text-primary">Knowledge Driven Investments</h3>
+            </div>
+            <p class="text-slate-600 max-w-sm mt-4 md:mt-0 text-right md:text-left">Structured strategies tailored to
+              your life stage and risk appetite.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="group p-8 border bg-white transition-all cursor-pointer border-slate-200 hover:border-secondary/50 hover:shadow-xl hover:shadow-slate-200/50"
+              style="opacity: 1; transform: none;">
+              <div
+                class="w-14 h-14 bg-slate-50 text-primary mb-6 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chart-line w-8 h-8" aria-hidden="true">
+                  <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                  <path d="m19 9-5 5-4-4-3 3"></path>
+                </svg></div>
+              <h4 class="text-xl font-serif font-bold text-primary mb-3">Equity Investments</h4>
+              <p class="text-slate-600 leading-relaxed">Strategic stock selection based on research and market
+                understanding.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-secondary font-semibold tracking-wide"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right w-4 h-4 transition-transform duration-300" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>See Details</div>
+            </div>
+            <div
+              class="group p-8 border bg-white transition-all cursor-pointer border-slate-200 hover:border-secondary/50 hover:shadow-xl hover:shadow-slate-200/50"
+              style="opacity: 1; transform: none;">
+              <div
+                class="w-14 h-14 bg-slate-50 text-primary mb-6 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chart-pie w-8 h-8" aria-hidden="true">
+                  <path
+                    d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z">
+                  </path>
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                </svg></div>
+              <h4 class="text-xl font-serif font-bold text-primary mb-3">Mutual Funds</h4>
+              <p class="text-slate-600 leading-relaxed">SIP &amp; lump sum strategies aligned with your financial goals.
+              </p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-secondary font-semibold tracking-wide"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right w-4 h-4 transition-transform duration-300" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>See Details</div>
+            </div>
+            <div
+              class="group p-8 border bg-white transition-all cursor-pointer border-slate-200 hover:border-secondary/50 hover:shadow-xl hover:shadow-slate-200/50"
+              style="opacity: 1; transform: none;">
+              <div
+                class="w-14 h-14 bg-slate-50 text-primary mb-6 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shield-check w-8 h-8" aria-hidden="true">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                  </path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg></div>
+              <h4 class="text-xl font-serif font-bold text-primary mb-3">Insurance Planning</h4>
+              <p class="text-slate-600 leading-relaxed">Right coverage for life &amp; health to secure your future.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-secondary font-semibold tracking-wide"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right w-4 h-4 transition-transform duration-300" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>See Details</div>
+            </div>
+            <div
+              class="group p-8 border bg-white transition-all cursor-pointer border-slate-200 hover:border-secondary/50 hover:shadow-xl hover:shadow-slate-200/50"
+              style="opacity: 1; transform: none;">
+              <div
+                class="w-14 h-14 bg-slate-50 text-primary mb-6 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-landmark w-8 h-8" aria-hidden="true">
+                  <path d="M10 18v-7"></path>
+                  <path
+                    d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z">
+                  </path>
+                  <path d="M14 18v-7"></path>
+                  <path d="M18 18v-7"></path>
+                  <path d="M3 22h18"></path>
+                  <path d="M6 18v-7"></path>
+                </svg></div>
+              <h4 class="text-xl font-serif font-bold text-primary mb-3">Bonds &amp; Fixed Income</h4>
+              <p class="text-slate-600 leading-relaxed">Stable investment options for consistent returns.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-secondary font-semibold tracking-wide"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right w-4 h-4 transition-transform duration-300" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>See Details</div>
+            </div>
+            <div
+              class="group p-8 border bg-white transition-all cursor-pointer border-slate-200 hover:border-secondary/50 hover:shadow-xl hover:shadow-slate-200/50"
+              style="opacity: 1; transform: none;">
+              <div
+                class="w-14 h-14 bg-slate-50 text-primary mb-6 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-briefcase w-8 h-8" aria-hidden="true">
+                  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                </svg></div>
+              <h4 class="text-xl font-serif font-bold text-primary mb-3">Portfolio Guidance</h4>
+              <p class="text-slate-600 leading-relaxed">Customized portfolio designed as per your risk &amp; goals.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-secondary font-semibold tracking-wide"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right w-4 h-4 transition-transform duration-300" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>See Details</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="py-24 bg-primary text-white overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 relative" style="opacity: 1; transform: none;">
+              <div class="aspect-[3/4] relative z-10 w-full max-w-md mx-auto"><img alt="Aniket Dalmia - Founder"
+                  class="w-full h-full object-cover shadow-2xl" src="\images\professional pic 4.jpeg">
+                <div
+                  class="absolute -bottom-6 -right-6 w-48 h-48 bg-secondary/10 -z-10 border border-secondary/30 hidden md:block">
+                </div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-white/5 -z-10 hidden md:block"></div>
+              </div>
+            </div>
+            <div class="lg:w-1/2" style="opacity: 1; transform: none;">
+              <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-4">Meet Your Financial Guide</h2>
+              <h3 class="text-4xl md:text-5xl font-serif mb-6">Aniket Dalmia</h3>
+              <p class="text-xl text-slate-300 mb-8 font-light italic border-l-2 border-secondary pl-6">"I believe in
+                solving financial problems, not selling products."</p>
+              <div class="space-y-6 mb-10">
+                <div class="flex items-start gap-4">
+                  <div class="mt-1 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">CA Inter — Both Groups</h4>
+                    <p class="text-slate-400">Completed curriculum of Chartered Accountancy Intermediate — Group I &amp;
+                      Group II, covering financial reporting, taxation, cost accounting, and law.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="mt-1 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">CFA Level 1 Curriculum</h4>
+                    <p class="text-slate-400">In-depth knowledge of the CFA Institute's Level 1 curriculum — equity
+                      valuation, fixed income, derivatives, portfolio management, and financial analysis.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="mt-1 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-lg">NISM Certified Research Analyst</h4>
+                    <p class="text-slate-400">Certified by SEBI-recognized NISM (National Institute of Securities
+                      Markets) as a Research Analyst — with 5+ years of hands-on market experience.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="process" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-4">How We Work</h2>
+            <h3 class="text-4xl font-serif text-primary">From Confusion to Clarity</h3>
+          </div>
+          <div class="relative max-w-5xl mx-auto">
+            <div class="hidden md:block absolute top-8 left-0 w-full h-[1px] bg-slate-200 z-0"></div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
+              <div class="flex flex-col items-center gap-4 relative"><button
+                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-headset w-6 h-6" aria-hidden="true">
+                    <path
+                      d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z">
+                    </path>
+                    <path d="M21 16v2a4 4 0 0 1-4 4h-5"></path>
+                  </svg>
+                  <div
+                    class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
+                    01</div>
+                </button>
+                <div class="text-center">
+                  <h4 class="font-serif font-bold text-primary">Understand Needs</h4>
+                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center gap-4 relative"><button
+                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-file-search w-6 h-6" aria-hidden="true">
+                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                    <path d="M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3"></path>
+                    <path d="m9 18-1.5-1.5"></path>
+                    <circle cx="5" cy="14" r="3"></circle>
+                  </svg>
+                  <div
+                    class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
+                    02</div>
+                </button>
+                <div class="text-center">
+                  <h4 class="font-serif font-bold text-primary">Analyze Situation</h4>
+                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center gap-4 relative"><button
+                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-target w-6 h-6" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                  <div
+                    class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
+                    03</div>
+                </button>
+                <div class="text-center">
+                  <h4 class="font-serif font-bold text-primary">Define Goals</h4>
+                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center gap-4 relative"><button
+                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chart-line w-6 h-6" aria-hidden="true">
+                    <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                    <path d="m19 9-5 5-4-4-3 3"></path>
+                  </svg>
+                  <div
+                    class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
+                    04</div>
+                </button>
+                <div class="text-center">
+                  <h4 class="font-serif font-bold text-primary">Create Strategy</h4>
+                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center gap-4 relative"><button
+                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-trending-up w-6 h-6" aria-hidden="true">
+                    <path d="M16 7h6v6"></path>
+                    <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                  </svg>
+                  <div
+                    class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
+                    05</div>
+                </button>
+                <div class="text-center">
+                  <h4 class="font-serif font-bold text-primary">Ongoing Support</h4>
+                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="py-24 bg-white border-t border-slate-200 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div class="bg-primary text-white p-8 md:p-16 relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+            </div>
+            <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+              <div class="max-w-xl">
+                <h2 class="text-2xl md:text-5xl font-serif font-bold mb-3 leading-tight">Take Control of Your<br
+                    class="hidden md:block"> Financial Future</h2>
+                <p class="text-base md:text-xl text-slate-300 mb-6 font-light">Stop guessing. Start investing with
+                  clarity.</p><a href="tel:7014224048"
+                  class="inline-flex items-center gap-3 bg-secondary hover:bg-secondary/90 text-primary font-bold px-6 py-4 rounded-none transition-colors text-base"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-phone w-5 h-5" aria-hidden="true">
+                    <path
+                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                    </path>
+                  </svg>Connect Now · 70142-24048</a>
+              </div>
+              <div class="border-t md:border-t-0 md:border-l border-white/20 pt-6 md:pt-0 md:pl-10 w-full md:w-auto">
+                <p class="text-xs text-secondary font-bold tracking-widest uppercase mb-2">Speak Directly To</p>
+                <h3 class="text-xl md:text-2xl font-serif">Aniket Dalmia</h3>
+                <p class="text-slate-400 text-sm">CEO – InvestMart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-slate-900 text-slate-300">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="text-center mb-8">
+            <h2 class="text-sm font-bold tracking-widest text-secondary uppercase mb-2">Disclaimer</h2>
+            <h3 class="text-2xl font-serif text-white">A Note of Transparency</h3>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-4 text-sm leading-relaxed">
+            <p>At InvestMart, we believe finance doesn't have to be confusing — we're here to help you make sense of
+              markets and take charge of your money, <span class="text-white font-medium">one smart step at a
+                time.</span></p>
+            <p>Everything you see on this site — tools, insights, and guidance — is shared purely to <span
+                class="text-white font-medium">help you learn and make informed decisions.</span> We are not
+              SEBI-registered investment advisors, and we do not offer personalized financial advice.</p>
+            <p>If you're planning to invest, we always recommend speaking with a certified financial advisor who
+              understands your unique goals, risk profile, and life situation.</p>
+            <p>Investing is a journey — with its share of ups and downs. But with the right mindset, the right
+              knowledge, and the right guidance, <span class="text-secondary font-semibold">you're already ahead of the
+                curve.</span></p>
+            <p class="border-t border-white/10 pt-4 text-slate-400 italic">Stay curious. Stay cautious. And know that
+              InvestMart is here to guide you — not sell to you. Your financial well-being is always our priority. 💛
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer class="bg-primary border-t border-white/10 text-slate-400 py-12">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+            <div
+              class="bg-secondary/20 border border-secondary/40 rounded-xl px-3 py-2 flex flex-col items-center gap-0.5">
+              <img alt="InvestMart" class="h-10 w-auto object-contain" src="/assets/logo-transparent-Brzr_Duj.png"><span
+                class="text-[8px] font-bold tracking-widest text-secondary uppercase leading-none">Invest Smart with
+                InvestMart</span></div>
+            <p class="font-serif italic text-white/80">"Build Wealth, Not Just Returns"</p>
+            <p class="flex items-center gap-2 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 text-secondary" aria-hidden="true">
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                </path>
+              </svg> 70142-24048</p>
+          </div>
+          <div class="border-t border-white/10 pt-6 text-center">
+            <p class="text-xs text-slate-500 leading-relaxed max-w-2xl mx-auto mb-4">Certifications and studies reflect
+              knowledge and training. Mutual fund investments are subject to market risks. Please read all scheme
+              related documents carefully before investing.</p>
+            <p class="text-sm text-slate-400 font-medium">© 2026 InvestMart. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;">
+      <ol tabindex="-1"
+        class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+      </ol>
+    </div>
+  </div>
+  <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="7wog1fmuqhe2"
+    data-repl-id="3add9a1e-dd37-434a-8b87-55801eac20e6"></script>
+
+  <div id="give-freely-root-bcjindcccaagfpapjjmafapmmgkkhgoa" class="give-freely-root"
+    data-extension-id="bcjindcccaagfpapjjmafapmmgkkhgoa" data-extension-name="JSON Formatter" style="display: block;">
+  </div>
+  <div id="replit-pill-host"></div>
+</body>
+
+</html>
