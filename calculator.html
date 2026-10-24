@@ -60,48 +60,7 @@
                         <h2 class="text-3xl md:text-4xl font-serif text-white font-bold mb-3">Choose a Calculator</h2>
                         <p class="text-slate-400">Free tools to help you make informed investment decisions.</p>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 items-stretch">
-                        <!-- SIP -->
-                        <button onclick="showCalculator('sip')" class="flex h-full flex-col items-center text-center justify-between bg-white/10 border border-white/15 rounded-2xl p-6 gap-5 hover:bg-white/15 transition-all group" tabindex="0">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-md">
-                                <span class="text-3xl">📈</span>
-                            </div>
-                            <div class="flex flex-col items-center justify-center flex-1">
-                                <p class="font-bold text-white text-sm leading-tight mb-1">SIP Calculator</p>
-                                <p class="text-xs text-slate-400 leading-relaxed">Plan your monthly SIP &amp; watch wealth grow</p>
-                            </div>
-                        </button>
-                        <!-- Lumpsum -->
-                        <button onclick="showCalculator('lumpsum')" class="flex h-full flex-col items-center text-center justify-between bg-white/10 border border-white/15 rounded-2xl p-6 gap-5 hover:bg-white/15 transition-all group" tabindex="0">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 flex items-center justify-center shadow-md">
-                                <span class="text-3xl">💰</span>
-                            </div>
-                            <div class="flex flex-col items-center justify-center flex-1">
-                                <p class="font-bold text-white text-sm leading-tight mb-1">Lumpsum Calculator</p>
-                                <p class="text-xs text-slate-400 leading-relaxed">See returns on a one-time investment</p>
-                            </div>
-                        </button>
-                        <!-- CAGR -->
-                        <button onclick="showCalculator('cagr')" class="flex h-full flex-col items-center text-center justify-between bg-white/10 border border-white/15 rounded-2xl p-6 gap-5 hover:bg-white/15 transition-all group" tabindex="0">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 flex items-center justify-center shadow-md">
-                                <span class="text-3xl">📊</span>
-                            </div>
-                            <div class="flex flex-col items-center justify-center flex-1">
-                                <p class="font-bold text-white text-sm leading-tight mb-1">CAGR Calculator</p>
-                                <p class="text-xs text-slate-400 leading-relaxed">Find the real growth rate of any investment</p>
-                            </div>
-                        </button>
-                        <!-- Retirement -->
-                        <button onclick="showCalculator('retirement')" class="flex h-full flex-col items-center text-center justify-between bg-white/10 border border-white/15 rounded-2xl p-6 gap-5 hover:bg-white/15 transition-all group" tabindex="0">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-700 flex items-center justify-center shadow-md">
-                                <span class="text-3xl">🏖️</span>
-                            </div>
-                            <div class="flex flex-col items-center justify-center flex-1">
-                                <p class="font-bold text-white text-sm leading-tight mb-1">Retirement Calculator</p>
-                                <p class="text-xs text-slate-400 leading-relaxed">Know how much corpus you'll need to retire</p>
-                            </div>
-                        </button>
-                    </div>
+                    <div id="calculator-catalog" class="calculator-catalog"></div>
                     <p class="text-center text-xs text-slate-500 mt-10 leading-relaxed max-w-xl mx-auto">These calculators provide estimates for educational purposes only. Actual returns may vary based on market conditions. Please consult a financial advisor before making investment decisions.</p>
                 </div>
 
@@ -209,6 +168,7 @@
                                 <div class="bg-secondary/10 border border-secondary/30 rounded-2xl p-5 space-y-3 mt-2" id="retirement-results"></div>
                             </div>
                         </div>
+                        <div id="additional-calc-forms"></div>
                     </div>
 
                     <!-- CTA after calculator -->
@@ -223,9 +183,11 @@
 
     <script>
         function formatCurrency(amount) {
-            if (amount >= 1e7) return '₹' + (amount / 1e7).toFixed(2) + ' Cr';
-            if (amount >= 1e5) return '₹' + (amount / 1e5).toFixed(2) + ' L';
-            return '₹' + Math.round(amount).toLocaleString('en-IN');
+            var sign = amount < 0 ? '-₹' : '₹';
+            amount = Math.abs(amount);
+            if (amount >= 1e7) return sign + (amount / 1e7).toFixed(2) + ' Cr';
+            if (amount >= 1e5) return sign + (amount / 1e5).toFixed(2) + ' L';
+            return sign + Math.round(amount).toLocaleString('en-IN');
         }
 
         function renderResults(containerId, rows) {
@@ -240,11 +202,174 @@
         }
 
         var calculators = {
-            sip: { emoji: '📈', title: 'SIP Calculator', desc: 'Plan your monthly SIP & watch wealth grow' },
-            lumpsum: { emoji: '💰', title: 'Lumpsum Calculator', desc: 'See returns on a one-time investment' },
-            cagr: { emoji: '📊', title: 'CAGR Calculator', desc: 'Find the real growth rate of any investment' },
-            retirement: { emoji: '🏖️', title: 'Retirement Calculator', desc: "Know how much corpus you'll need to retire" }
+            sip: { emoji: '📈', title: 'SIP Calculator', desc: 'Plan a regular monthly investment', group: 'Build wealth' },
+            stepup: { emoji: '🚀', title: 'Step-up SIP Calculator', desc: 'Increase your monthly SIP each year', group: 'Build wealth' },
+            mf: { emoji: '🌱', title: 'Mutual Fund Calculator', desc: 'Estimate SIP and lump-sum growth together', group: 'Build wealth' },
+            lumpsum: { emoji: '💰', title: 'Lumpsum Calculator', desc: 'Estimate growth from a one-time investment', group: 'Build wealth' },
+            roi: { emoji: '🎯', title: 'ROI Calculator', desc: 'Measure total and annualized return', group: 'Measure performance' },
+            cagr: { emoji: '📊', title: 'CAGR Calculator', desc: 'Find the annualized growth rate', group: 'Measure performance' },
+            xirr: { emoji: '🗓️', title: 'XIRR Calculator', desc: 'Annualize cash flows on their actual dates', group: 'Measure performance' },
+            swp: { emoji: '🔄', title: 'SWP Calculator', desc: 'Plan regular withdrawals from a corpus', group: 'Plan income & savings' },
+            fd: { emoji: '🏦', title: 'FD Calculator', desc: 'Estimate a fixed deposit maturity value', group: 'Plan income & savings' },
+            rd: { emoji: '🐷', title: 'RD Calculator', desc: 'Estimate recurring deposit maturity value', group: 'Plan income & savings' },
+            retirement: { emoji: '🏖️', title: 'Retirement Calculator', desc: "Estimate the corpus you'll need to retire", group: 'Plan income & savings' },
+            emi: { emoji: '🏠', title: 'EMI Calculator', desc: 'Estimate monthly loan payments and interest', group: 'Plan borrowing' }
         };
+
+        var calculatorOrder = {
+            'Build wealth': ['sip', 'stepup', 'mf', 'lumpsum'],
+            'Measure performance': ['roi', 'cagr', 'xirr'],
+            'Plan income & savings': ['swp', 'fd', 'rd', 'retirement'],
+            'Plan borrowing': ['emi']
+        };
+
+        var additionalCalculatorFields = {
+            stepup: [
+                { id: 'monthly', label: 'Starting Monthly SIP (₹)', value: 5000 },
+                { id: 'step', label: 'Annual SIP Increase (%)', value: 10 },
+                { id: 'return', label: 'Expected Annual Return (%)', value: 12 },
+                { id: 'years', label: 'Investment Period (Years)', value: 10 }
+            ],
+            mf: [
+                { id: 'monthly', label: 'Monthly SIP Amount (₹)', value: 5000 },
+                { id: 'lump', label: 'Initial Lump-sum Investment (₹)', value: 50000 },
+                { id: 'return', label: 'Expected Annual Return (%)', value: 12 },
+                { id: 'years', label: 'Investment Period (Years)', value: 10 }
+            ],
+            swp: [
+                { id: 'corpus', label: 'Starting Corpus (₹)', value: 1000000 },
+                { id: 'withdrawal', label: 'Monthly Withdrawal (₹)', value: 10000 },
+                { id: 'return', label: 'Expected Annual Return (%)', value: 8 },
+                { id: 'years', label: 'Withdrawal Period (Years)', value: 20 }
+            ],
+            fd: [
+                { id: 'principal', label: 'Deposit Amount (₹)', value: 100000 },
+                { id: 'rate', label: 'Annual Interest Rate (%)', value: 7 },
+                { id: 'years', label: 'Deposit Period (Years)', value: 5 },
+                { id: 'frequency', label: 'Compounding Frequency', type: 'select', value: '4', options: [['1', 'Yearly'], ['2', 'Half-yearly'], ['4', 'Quarterly'], ['12', 'Monthly']] }
+            ],
+            roi: [
+                { id: 'invested', label: 'Amount Invested (₹)', value: 100000 },
+                { id: 'current', label: 'Current / Exit Value (₹)', value: 150000 },
+                { id: 'years', label: 'Holding Period (Years)', value: 3 }
+            ],
+            rd: [
+                { id: 'monthly', label: 'Monthly Deposit (₹)', value: 5000 },
+                { id: 'rate', label: 'Annual Interest Rate (%)', value: 6.5 },
+                { id: 'years', label: 'Deposit Period (Years)', value: 5 }
+            ],
+            emi: [
+                { id: 'principal', label: 'Loan Amount (₹)', value: 1000000 },
+                { id: 'rate', label: 'Annual Interest Rate (%)', value: 9 },
+                { id: 'years', label: 'Loan Tenure (Years)', value: 5 }
+            ],
+            xirr: [
+                { id: 'cashflows', label: 'Cash flows (one per line: YYYY-MM-DD, amount)', type: 'textarea', value: '2023-01-01, -50000\\n2024-01-01, -25000\\n2025-01-01, -25000\\n2026-01-01, 130000' }
+            ]
+        };
+
+        function renderCalculatorCatalog() {
+            var catalog = document.getElementById('calculator-catalog');
+            Object.keys(calculatorOrder).forEach(function(groupName) {
+                var section = document.createElement('section');
+                section.className = 'calculator-group';
+
+                var heading = document.createElement('h3');
+                heading.className = 'calculator-group-title';
+                heading.textContent = groupName;
+                section.appendChild(heading);
+
+                var grid = document.createElement('div');
+                grid.className = 'calculator-card-grid';
+                calculatorOrder[groupName].forEach(function(type) {
+                    var calc = calculators[type];
+                    var card = document.createElement('button');
+                    card.type = 'button';
+                    card.className = 'calculator-card';
+                    card.setAttribute('aria-label', calc.title + ': ' + calc.desc);
+                    card.addEventListener('click', function() { showCalculator(type); });
+
+                    var icon = document.createElement('span');
+                    icon.className = 'calculator-card-icon';
+                    icon.textContent = calc.emoji;
+                    var title = document.createElement('span');
+                    title.className = 'calculator-card-title';
+                    title.textContent = calc.title;
+                    var description = document.createElement('span');
+                    description.className = 'calculator-card-description';
+                    description.textContent = calc.desc;
+                    card.append(icon, title, description);
+                    grid.appendChild(card);
+                });
+                section.appendChild(grid);
+                catalog.appendChild(section);
+            });
+        }
+
+        function renderAdditionalCalculatorForms() {
+            var container = document.getElementById('additional-calc-forms');
+            Object.keys(additionalCalculatorFields).forEach(function(type) {
+                var form = document.createElement('div');
+                form.id = type + '-calc';
+                form.className = 'calc-form additional-calc-form';
+                form.style.display = 'none';
+
+                var fields = document.createElement('div');
+                fields.className = 'space-y-5';
+                additionalCalculatorFields[type].forEach(function(field) {
+                    var wrapper = document.createElement('div');
+                    var label = document.createElement('label');
+                    label.className = 'block text-sm font-semibold text-slate-300 mb-1.5';
+                    label.htmlFor = type + '-' + field.id;
+                    label.textContent = field.label;
+
+                    var input;
+                    if (field.type === 'textarea') {
+                        input = document.createElement('textarea');
+                        input.rows = 5;
+                        input.value = field.value.replace(/\\n/g, '\n');
+                        input.className = 'calc-input calc-textarea w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-sm placeholder:text-slate-500';
+                    } else if (field.type === 'select') {
+                        input = document.createElement('select');
+                        input.className = 'calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base';
+                        field.options.forEach(function(option) {
+                            var item = document.createElement('option');
+                            item.value = option[0];
+                            item.textContent = option[1];
+                            item.style.color = '#0f172a';
+                            input.appendChild(item);
+                        });
+                        input.value = field.value;
+                    } else {
+                        input = document.createElement('input');
+                        input.type = 'number';
+                        input.min = '0';
+                        input.step = 'any';
+                        input.value = field.value;
+                        input.className = 'calc-input w-full border border-white/20 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary bg-white/10 text-base placeholder:text-slate-500';
+                    }
+                    input.id = type + '-' + field.id;
+                    input.addEventListener('input', function() { calculateAdditional(type); });
+                    input.addEventListener('change', function() { calculateAdditional(type); });
+                    wrapper.append(label, input);
+                    fields.appendChild(wrapper);
+                });
+
+                var results = document.createElement('div');
+                results.id = type + '-results';
+                results.className = 'bg-secondary/10 border border-secondary/30 rounded-2xl p-5 space-y-3 mt-2';
+                fields.appendChild(results);
+
+                if (type === 'xirr') {
+                    var note = document.createElement('p');
+                    note.className = 'text-xs text-slate-400 leading-relaxed';
+                    note.textContent = 'Use negative amounts for investments and positive amounts for withdrawals or the final value. Include at least one of each.';
+                    fields.insertBefore(note, results);
+                }
+                form.appendChild(fields);
+                container.appendChild(form);
+            });
+        }
 
         function showCalculator(type) {
             document.getElementById('grid-view').style.display = 'none';
@@ -266,6 +391,7 @@
             else if (type === 'lumpsum') calculateLumpsum();
             else if (type === 'cagr') calculateCAGR();
             else if (type === 'retirement') calculateRetirement();
+            else calculateAdditional(type);
         }
 
         function showGrid() {
@@ -302,6 +428,214 @@
             ]);
         }
 
+        function calculateAdditional(type) {
+            var number = function(name) {
+                var value = parseFloat(document.getElementById(type + '-' + name).value);
+                return Number.isFinite(value) ? value : NaN;
+            };
+            var showError = function(message) {
+                var results = document.getElementById(type + '-results');
+                results.textContent = message;
+                results.classList.add('calculator-error');
+            };
+            var showRows = function(rows) {
+                var results = document.getElementById(type + '-results');
+                results.classList.remove('calculator-error');
+                renderResults(type + '-results', rows);
+            };
+
+            if (type === 'xirr') {
+                var lines = document.getElementById('xirr-cashflows').value.trim().split(/\r?\n/).filter(Boolean);
+                var flows = [];
+                for (var i = 0; i < lines.length; i++) {
+                    var parts = lines[i].split(',');
+                    var dateText = (parts[0] || '').trim();
+                    var amount = parseFloat((parts[1] || '').trim());
+                    var date = new Date(dateText + 'T00:00:00');
+                    if (parts.length < 2 || !dateText || !Number.isFinite(amount) || Number.isNaN(date.getTime())) {
+                        showError('Check each line. Use the format YYYY-MM-DD, amount.');
+                        return;
+                    }
+                    flows.push({ date: date, amount: amount });
+                }
+                var hasNegative = flows.some(function(flow) { return flow.amount < 0; });
+                var hasPositive = flows.some(function(flow) { return flow.amount > 0; });
+                if (flows.length < 2 || !hasNegative || !hasPositive) {
+                    showError('Enter at least two dated cash flows, including an investment (negative) and a return (positive).');
+                    return;
+                }
+                var firstDate = Math.min.apply(null, flows.map(function(flow) { return flow.date.getTime(); }));
+                var npv = function(rate) {
+                    return flows.reduce(function(total, flow) {
+                        var years = (flow.date.getTime() - firstDate) / 86400000 / 365;
+                        return total + flow.amount / Math.pow(1 + rate, years);
+                    }, 0);
+                };
+                var low = -0.9999;
+                var high = 1;
+                var lowValue = npv(low);
+                var highValue = npv(high);
+                while (Number.isFinite(highValue) && lowValue * highValue > 0 && high < 100000) {
+                    high = high * 2 + 1;
+                    highValue = npv(high);
+                }
+                if (!Number.isFinite(lowValue) || !Number.isFinite(highValue) || lowValue * highValue > 0) {
+                    showError('Could not find a single XIRR for these cash flows. Check the dates and amounts.');
+                    return;
+                }
+                for (var iteration = 0; iteration < 200; iteration++) {
+                    var mid = (low + high) / 2;
+                    var midValue = npv(mid);
+                    if (!Number.isFinite(midValue)) {
+                        showError('Could not calculate XIRR for these cash flows.');
+                        return;
+                    }
+                    if (Math.abs(midValue) < 0.000001 || Math.abs(high - low) < 0.000000001) {
+                        low = high = mid;
+                        break;
+                    }
+                    if (lowValue * midValue <= 0) {
+                        high = mid;
+                        highValue = midValue;
+                    } else {
+                        low = mid;
+                        lowValue = midValue;
+                    }
+                }
+                var xirr = (low + high) / 2;
+                var totalInvested = flows.reduce(function(total, flow) { return total + (flow.amount < 0 ? -flow.amount : 0); }, 0);
+                var totalReceived = flows.reduce(function(total, flow) { return total + (flow.amount > 0 ? flow.amount : 0); }, 0);
+                showRows([
+                    { label: 'Cash flows entered', value: flows.length.toString() },
+                    { label: 'Total Invested', value: formatCurrency(totalInvested) },
+                    { label: 'Total Received', value: formatCurrency(totalReceived) },
+                    { label: 'XIRR', value: (xirr * 100).toFixed(2) + '% per year', accent: true }
+                ]);
+                return;
+            }
+
+            var years;
+            var months;
+            var rate;
+            var invested;
+            var balance;
+            var rows;
+
+            if (type === 'stepup') {
+                var monthly = number('monthly');
+                var step = number('step');
+                rate = number('return');
+                years = number('years');
+                if (!(monthly > 0 && step >= 0 && step <= 100 && rate >= 0 && rate <= 100 && years > 0 && years <= 100)) return showError('Enter a valid SIP, step-up and return rate (up to 100%) and a period up to 100 years.');
+                months = Math.max(1, Math.round(years * 12));
+                var monthlyRate = rate / 1200;
+                balance = 0;
+                invested = 0;
+                for (var month = 0; month < months; month++) {
+                    var contribution = monthly * Math.pow(1 + step / 100, Math.floor(month / 12));
+                    invested += contribution;
+                    balance = (balance + contribution) * (1 + monthlyRate);
+                }
+                rows = [
+                    { label: 'Total Invested', value: formatCurrency(invested) },
+                    { label: 'Estimated Growth', value: formatCurrency(balance - invested) },
+                    { label: 'Estimated Value', value: formatCurrency(balance), accent: true }
+                ];
+            } else if (type === 'mf') {
+                monthly = number('monthly');
+                var lump = number('lump');
+                rate = number('return');
+                years = number('years');
+                if (!(monthly >= 0 && lump >= 0 && monthly + lump > 0 && rate >= 0 && rate <= 100 && years > 0 && years <= 100)) return showError('Enter a valid investment and period; the return rate must be between 0% and 100%.');
+                months = Math.max(1, Math.round(years * 12));
+                monthlyRate = rate / 1200;
+                balance = lump;
+                for (month = 0; month < months; month++) balance = (balance + monthly) * (1 + monthlyRate);
+                invested = lump + monthly * months;
+                rows = [
+                    { label: 'Total Invested', value: formatCurrency(invested) },
+                    { label: 'Estimated Gain', value: formatCurrency(balance - invested) },
+                    { label: 'Estimated Value', value: formatCurrency(balance), accent: true }
+                ];
+            } else if (type === 'swp') {
+                var corpus = number('corpus');
+                var withdrawal = number('withdrawal');
+                rate = number('return');
+                years = number('years');
+                if (!(corpus > 0 && withdrawal > 0 && rate >= 0 && rate <= 100 && years > 0 && years <= 100)) return showError('Enter positive corpus, withdrawal, and period values; return must be between 0% and 100%.');
+                months = Math.max(1, Math.round(years * 12));
+                monthlyRate = rate / 1200;
+                balance = corpus;
+                var totalWithdrawn = 0;
+                var actualMonths = 0;
+                for (month = 0; month < months && balance > 0; month++) {
+                    balance *= 1 + monthlyRate;
+                    var paid = Math.min(balance, withdrawal);
+                    balance -= paid;
+                    totalWithdrawn += paid;
+                    actualMonths++;
+                }
+                rows = [
+                    { label: 'Total Withdrawn', value: formatCurrency(totalWithdrawn) },
+                    { label: 'Withdrawal Duration', value: actualMonths + ' months' },
+                    { label: 'Remaining Corpus', value: formatCurrency(balance), accent: true }
+                ];
+            } else if (type === 'fd') {
+                var principal = number('principal');
+                rate = number('rate');
+                years = number('years');
+                var frequency = number('frequency');
+                if (!(principal > 0 && rate >= 0 && rate <= 100 && years > 0 && years <= 100 && frequency > 0)) return showError('Enter a positive deposit and period; the interest rate must be between 0% and 100%.');
+                balance = principal * Math.pow(1 + rate / 100 / frequency, frequency * years);
+                rows = [
+                    { label: 'Principal', value: formatCurrency(principal) },
+                    { label: 'Interest Earned', value: formatCurrency(balance - principal) },
+                    { label: 'Maturity Value', value: formatCurrency(balance), accent: true }
+                ];
+            } else if (type === 'roi') {
+                invested = number('invested');
+                var current = number('current');
+                years = number('years');
+                if (!(invested > 0 && current >= 0 && years > 0 && years <= 100)) return showError('Enter a positive invested amount and holding period.');
+                var profit = current - invested;
+                var annualized = current > 0 ? (Math.pow(current / invested, 1 / years) - 1) * 100 : -100;
+                rows = [
+                    { label: 'Profit / Loss', value: formatCurrency(profit) },
+                    { label: 'Absolute ROI', value: (profit / invested * 100).toFixed(2) + '%' },
+                    { label: 'Annualized Return', value: annualized.toFixed(2) + '% per year', accent: true }
+                ];
+            } else if (type === 'rd') {
+                monthly = number('monthly');
+                rate = number('rate');
+                years = number('years');
+                if (!(monthly > 0 && rate >= 0 && rate <= 100 && years > 0 && years <= 100)) return showError('Enter a positive monthly deposit and period; the interest rate must be between 0% and 100%.');
+                months = Math.max(1, Math.round(years * 12));
+                monthlyRate = Math.pow(1 + rate / 400, 1 / 3) - 1;
+                balance = 0;
+                for (month = 0; month < months; month++) balance = balance * (1 + monthlyRate) + monthly;
+                invested = monthly * months;
+                rows = [
+                    { label: 'Total Deposited', value: formatCurrency(invested) },
+                    { label: 'Interest Earned', value: formatCurrency(balance - invested) },
+                    { label: 'Maturity Value', value: formatCurrency(balance), accent: true }
+                ];
+            } else if (type === 'emi') {
+                principal = number('principal');
+                rate = number('rate');
+                years = number('years');
+                if (!(principal > 0 && rate >= 0 && rate <= 100 && years > 0 && years <= 100)) return showError('Enter a positive loan amount and tenure; the interest rate must be between 0% and 100%.');
+                months = Math.max(1, Math.round(years * 12));
+                monthlyRate = rate / 1200;
+                var emi = monthlyRate > 0 ? principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1) : principal / months;
+                rows = [
+                    { label: 'Monthly EMI', value: formatCurrency(emi) },
+                    { label: 'Total Interest', value: formatCurrency(emi * months - principal) },
+                    { label: 'Total Repayment', value: formatCurrency(emi * months), accent: true }
+                ];
+            }
+            if (rows) showRows(rows);
+        }
+
         function calculateCAGR() {
             var initial = parseFloat(document.getElementById('cagr-initial').value) || 0;
             var final_ = parseFloat(document.getElementById('cagr-final').value) || 0;
@@ -333,6 +667,9 @@
                 { label: 'Retirement Corpus Needed', value: formatCurrency(corpus), accent: true }
             ]);
         }
+
+        renderCalculatorCatalog();
+        renderAdditionalCalculatorForms();
     </script>
 </body>
 </html>
