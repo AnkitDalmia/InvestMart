@@ -110,6 +110,17 @@
     outline: none;
   }
 
+  .home-mobile-nav a[href="calculator.html"] {
+    background: hsl(var(--secondary));
+    color: hsl(var(--primary));
+    font-weight: 700;
+  }
+
+  .home-mobile-nav a[href="calculator.html"]:hover,
+  .home-mobile-nav a[href="calculator.html"]:focus-visible {
+    background: hsl(var(--secondary) / 0.9);
+  }
+
   .home-mobile-nav a:last-child {
     margin-top: 4px;
     background: hsl(var(--primary));
