@@ -1,3 +1,41 @@
+/* Keep the calculator header aligned at desktop and compact screens. */
+.calculator-header-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.calculator-brand-link {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+}
+
+.calculator-header-title {
+  grid-column: 2;
+  position: static;
+  min-width: 0;
+  text-align: center;
+}
+
+.calculator-home-link {
+  grid-column: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: hsl(var(--secondary));
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 150ms ease;
+}
+
+.calculator-home-link:hover,
+.calculator-home-link:focus-visible {
+  color: white;
+}
+
 @media (max-width: 1023px) {
   .home-header-inner {
     height: auto;
@@ -111,24 +149,66 @@
   }
 
   .calculator-header-inner {
-    min-height: 72px;
+    grid-template-columns: minmax(0, 128px) minmax(0, 1fr) auto;
     padding: 10px 12px;
     gap: 8px;
   }
 
+  .calculator-brand-link {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .calculator-brand-link > div,
+  .calculator-brand-link > div > div {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .calculator-brand-link img {
+    height: 30px;
+    max-width: 100%;
+  }
+
+  .calculator-brand-link span {
+    display: block;
+    width: 100%;
+    font-size: 6px;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-align: center;
+    text-wrap: balance;
+  }
+
   .calculator-header-title {
-    position: static;
-    inset: auto;
-    text-align: right;
-    flex: 1;
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .calculator-home-link {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 12px;
   }
 
   .calculator-header-title h1 {
-    font-size: 15px;
+    font-size: clamp(11px, 3.8vw, 15px);
+    line-height: 1.15;
   }
 
   .calculator-header-title p {
     font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-header-title p {
+    display: none;
   }
 }
 
@@ -145,6 +225,20 @@
 }
 
 @media (min-width: 1024px) {
+  .calculator-header-inner {
+    position: relative;
+  }
+
+  .calculator-header-title {
+    position: absolute;
+    grid-column: auto;
+    grid-row: auto;
+    left: 50%;
+    width: max-content;
+    max-width: calc(100% - 320px);
+    transform: translateX(-50%);
+  }
+
   .home-menu-toggle,
   .home-mobile-nav {
     display: none !important;
