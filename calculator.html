@@ -11,12 +11,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mobile.css">
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        #calculator-view, #grid-view {
-            animation: fadeIn 0.3s ease-out;
+        @keyframes viewFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .calc-input::-webkit-outer-spin-button,
         .calc-input::-webkit-inner-spin-button {
@@ -377,7 +374,7 @@
             cv.style.display = 'block';
             cv.style.animation = 'none';
             void cv.offsetHeight;
-            cv.style.animation = 'fadeIn 0.3s ease-out';
+            cv.style.animation = 'viewFadeIn 140ms ease-out';
 
             var calc = calculators[type];
             document.getElementById('calc-emoji').textContent = calc.emoji;
@@ -400,7 +397,7 @@
             gv.style.display = 'block';
             gv.style.animation = 'none';
             void gv.offsetHeight;
-            gv.style.animation = 'fadeIn 0.3s ease-out';
+            gv.style.animation = 'viewFadeIn 140ms ease-out';
         }
 
         function calculateSIP() {
