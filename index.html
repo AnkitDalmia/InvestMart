@@ -43,7 +43,7 @@
   <div id="root">
     <div
       class="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-secondary selection:text-white overflow-x-hidden">
-      <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200/50 home-header">
+      <header class="fixed top-0 w-full z-50 border-b home-header">
         <div class="container mx-auto px-6 h-20 flex items-center justify-between home-header-inner">
           <div class="flex items-center">
             <div class="bg-primary rounded-xl px-3 py-2 flex flex-col items-center gap-0.5 home-brand"><img alt="InvestMart"
@@ -53,10 +53,11 @@
           </div>
           <nav class="hidden md:flex items-center gap-6 text-sm font-medium home-desktop-nav" aria-label="Main navigation">
             <a href="#services"
-              class="hover:text-secondary transition-colors">Services</a>
-              <a href="#about" class="hover:text-secondary transition-colors">About</a>
+              class="home-nav-link hover:text-secondary transition-colors">Services</a>
+              <a href="#about" class="home-nav-link hover:text-secondary transition-colors">About</a>
               <a href="#process"
-              class="hover:text-secondary transition-colors">Our Process</a><a href="calculator.html"
+              class="home-nav-link hover:text-secondary transition-colors">Our Process</a>
+              <a href="#faq" class="home-nav-link hover:text-secondary transition-colors">FAQ</a><a href="calculator.html"
               class="flex items-center gap-1.5 bg-secondary text-primary px-3 py-1.5 rounded-lg font-bold hover:bg-secondary/90 transition-colors text-xs">🧮
               Financial Calculator</a></nav>
           <button class="home-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation menu">
@@ -70,6 +71,7 @@
           <a href="#services">Services</a>
           <a href="#about">About</a>
           <a href="#process">Our Process</a>
+          <a href="#faq">Frequently Asked Questions</a>
           <a href="calculator.html">🧮 Financial Calculator</a>
           <a href="#contact">Talk to Expert Now</a>
         </nav>
@@ -255,7 +257,7 @@
                 </svg>
                 Open a Demat Account
               </a>
-              <a href="https://wa.me/917014224048?text=Hi%20InvestMart!%20I%27m%20interested%20in%20equity%20investing.%20Could%20you%20share%20how%20to%20get%20started%20and%20what%20the%20next%20steps%20are%3F" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/917014224048?text=Hi%20Aniket!%20I%27m%20interested%20in%20equity%20investing.%20Could%20you%20share%20how%20to%20get%20started%20and%20what%20the%20next%20steps%20are%3F" target="_blank" rel="noopener noreferrer"
                 class="mt-3 flex items-center gap-2 text-xs text-secondary font-semibold tracking-wide hover:text-primary transition-colors"
                 aria-label="Ask InvestMart about equity investments on WhatsApp (opens in a new tab)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -434,11 +436,48 @@
                     <div class="w-2 h-2 bg-secondary rounded-full"></div>
                   </div>
                   <div>
-                    <h4 class="font-bold text-lg">NISM Certified Research Analyst</h4>
-                    <p class="text-slate-400">Certified by SEBI-recognized NISM (National Institute of Securities
-                      Markets) as a Research Analyst — with 5+ years of hands-on market experience.</p>
+                    <h4 class="font-bold text-lg">NISM-Series-XV Research Analyst Certification</h4>
+                    <p class="text-slate-400">NISM-Series-XV exam passed · Enrollment No. 2610059513 · This credential is not, by itself, a SEBI registration.</p>
                   </div>
                 </div>
+              </div>
+              <div class="credentials-panel rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
+                <h4 class="font-serif text-xl font-bold text-white mb-4">Regulatory Credentials &amp; Disclosures</h4>
+                <dl class="credentials-grid grid gap-4">
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-secondary">AMFI Mutual Fund Distributor</dt>
+                    <dd class="mt-1 text-sm text-slate-200">ARN-358551</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-secondary">Employee Unique Identification Number</dt>
+                    <dd class="mt-1 text-sm text-slate-200">EUIN: E684123</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-secondary">NISM-Series-V-A</dt>
+                    <dd class="mt-1 text-sm text-slate-200">Mutual Fund Distributors Certification · Enrollment No. 2610146625</dd>
+                  </div>
+                  <div>
+                    <dt class="text-xs font-bold uppercase tracking-wider text-secondary">NISM-Series-VIII</dt>
+                    <dd class="mt-1 text-sm text-slate-200">Equity Derivatives Certification · Enrollment No. 2610153007</dd>
+                  </div>
+                  <div class="credentials-grid-wide">
+                    <dt class="text-xs font-bold uppercase tracking-wider text-secondary">NISM Candidate Registration Number</dt>
+                    <dd class="mt-1 text-sm text-slate-200">NISM-202600019204</dd>
+                  </div>
+                </dl>
+                <div class="mt-5 border-t border-white/10 pt-4 space-y-2 text-xs leading-relaxed text-slate-400">
+                  <p><strong class="text-slate-200">Role:</strong> InvestMart acts as an AMFI-registered Mutual Fund Distributor (ARN-358551). NISM examination credentials indicate passed certification exams; they do not by themselves mean SEBI registration as an Investment Adviser.</p>
+                  <p><strong class="text-slate-200">Risk disclosure:</strong> Mutual Fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future returns.</p>
+                </div>
+                <a href="InvestMart%20Regulatory%20Disclosures%20%26%20Credentials.pdf" target="_blank" rel="noopener noreferrer"
+                  class="credentials-pdf-link mt-5 inline-flex items-center gap-2 text-sm font-semibold text-secondary transition-colors hover:text-white"
+                  aria-label="View InvestMart regulatory disclosures and credentials PDF (opens in a new tab)">
+                  View full credentials &amp; disclosures (PDF)
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7"></path><path d="M7 7h10v10"></path>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -451,10 +490,10 @@
             <h3 class="text-4xl font-serif text-primary">From Confusion to Clarity</h3>
           </div>
           <div class="relative max-w-5xl mx-auto">
-            <div class="hidden md:block absolute top-8 left-0 w-full h-[1px] bg-slate-200 z-0"></div>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
-              <div class="flex flex-col items-center gap-4 relative"><button
-                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+            <div class="process-timeline-connector absolute top-8 left-0 w-full h-[1px] bg-slate-200 z-0"></div>
+            <div class="process-steps grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 xl:gap-4 relative z-10">
+                <div class="process-step flex flex-col items-center gap-4 relative"><div
+                  class="process-step-icon w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-headset w-6 h-6" aria-hidden="true">
@@ -466,14 +505,14 @@
                   <div
                     class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
                     01</div>
-                </button>
-                <div class="text-center">
+                </div>
+                <div class="process-step-copy text-center">
                   <h4 class="font-serif font-bold text-primary">Understand Needs</h4>
-                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                  <p class="process-step-description">A one-to-one conversation about your cash flow, risk comfort, and financial priorities.</p>
                 </div>
               </div>
-              <div class="flex flex-col items-center gap-4 relative"><button
-                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+              <div class="process-step flex flex-col items-center gap-4 relative"><div
+                  class="process-step-icon w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-file-search w-6 h-6" aria-hidden="true">
@@ -485,14 +524,14 @@
                   <div
                     class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
                     02</div>
-                </button>
-                <div class="text-center">
+                </div>
+                <div class="process-step-copy text-center">
                   <h4 class="font-serif font-bold text-primary">Analyze Situation</h4>
-                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                  <p class="process-step-description">Reviewing your existing investments, insurance, emergency funds, and liabilities.</p>
                 </div>
               </div>
-              <div class="flex flex-col items-center gap-4 relative"><button
-                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+              <div class="process-step flex flex-col items-center gap-4 relative"><div
+                  class="process-step-icon w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-target w-6 h-6" aria-hidden="true">
@@ -503,14 +542,14 @@
                   <div
                     class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
                     03</div>
-                </button>
-                <div class="text-center">
+                </div>
+                <div class="process-step-copy text-center">
                   <h4 class="font-serif font-bold text-primary">Define Goals</h4>
-                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                  <p class="process-step-description">Mapping short-term targets and long-term milestones like wealth creation, retirement, and education.</p>
                 </div>
               </div>
-              <div class="flex flex-col items-center gap-4 relative"><button
-                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+              <div class="process-step flex flex-col items-center gap-4 relative"><div
+                  class="process-step-icon w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-chart-line w-6 h-6" aria-hidden="true">
@@ -520,14 +559,14 @@
                   <div
                     class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
                     04</div>
-                </button>
-                <div class="text-center">
+                </div>
+                <div class="process-step-copy text-center">
                   <h4 class="font-serif font-bold text-primary">Create Strategy</h4>
-                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                  <p class="process-step-description">A tailored allocation across equity, debt, and mutual funds—built around your goals and risk comfort.</p>
                 </div>
               </div>
-              <div class="flex flex-col items-center gap-4 relative"><button
-                  class="w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0 transition-all cursor-pointer hover:shadow-md hover:scale-105"><svg
+              <div class="process-step flex flex-col items-center gap-4 relative"><div
+                  class="process-step-icon w-16 h-16 rounded-full bg-white border border-secondary shadow-sm flex items-center justify-center text-primary relative shrink-0"><svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="lucide lucide-trending-up w-6 h-6" aria-hidden="true">
@@ -537,14 +576,86 @@
                   <div
                     class="absolute -top-2 -right-2 w-6 h-6 bg-secondary text-white text-xs font-bold flex items-center justify-center rounded-full">
                     05</div>
-                </button>
-                <div class="text-center">
+                </div>
+                <div class="process-step-copy text-center">
                   <h4 class="font-serif font-bold text-primary">Ongoing Support</h4>
-                  <p class="text-xs text-secondary mt-0.5">Click to learn more</p>
+                  <p class="process-step-description">Regular reviews and guidance as your goals, life, and market conditions evolve.</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section id="faq" class="faq-section py-20 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-5xl">
+          <div class="faq-heading text-center mb-10 md:mb-14">
+            <p class="text-sm font-bold tracking-widest text-secondary uppercase mb-3">Frequently Asked Questions</p>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">A little more clarity</h2>
+            <p class="max-w-2xl mx-auto text-slate-600 leading-relaxed">Answers to common questions about getting started, our services, and investing with care.</p>
+          </div>
+          <div class="faq-list grid gap-3 md:gap-4">
+            <details class="faq-item">
+              <summary><span class="faq-number">01</span><span>Are there shortcuts or guaranteed ways to get rich overnight?</span></summary>
+              <p>No. Promises of overnight wealth are unrealistic. Long-term financial goals are better approached with informed decisions, discipline, patience, and consistency—not quick-rich schemes. 📈</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">02</span><span>Is the first consultation free?</span></summary>
+              <p>Yes. The initial consultation is free and gives us a chance to understand your goals and questions, with no obligation to proceed.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">03</span><span>Will I be pressured to buy a product?</span></summary>
+              <p>No. Our aim is to explain available options clearly so you can make informed decisions without pressure.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">04</span><span>Why choose InvestMart?</span></summary>
+              <p>We focus on financial clarity, goal-based planning, transparent guidance, and helping you understand options relevant to your objectives.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">05</span><span>Who can work with InvestMart?</span></summary>
+              <p>Beginners, salaried professionals, business owners, and people planning for retirement can all benefit from clear, structured financial education and guidance.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">06</span><span>Can beginners get started?</span></summary>
+              <p>Yes. We explain financial concepts in approachable terms and help you understand the steps and questions to consider as you learn.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">07</span><span>What investment topics do you cover?</span></summary>
+              <p>We provide information about equity, mutual funds, bonds and fixed income, insurance planning, and portfolio allocation. Mutual fund distribution is provided under AMFI ARN-358551. NISM credentials do not mean SEBI registration as an Investment Adviser.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">08</span><span>How do you assess what may suit my goals?</span></summary>
+              <p>Educational discussions can consider factors such as your stated goals, time horizon, risk comfort, and financial situation. InvestMart is not a SEBI-registered Investment Adviser and does not provide personalized investment advice.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">09</span><span>How much do I need to start investing?</span></summary>
+              <p>There is no single amount that suits everyone. It depends on the product, your budget, and your goals. Review product documents and applicable minimums before investing.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">10</span><span>Is investing risky?</span></summary>
+              <p>Yes. Investments carry risks, including possible loss of capital. Understand the risks, product documents, and your own comfort level before making a decision. Past performance does not guarantee future results.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">11</span><span>How often should my portfolio be reviewed?</span></summary>
+              <p>Review frequency depends on your goals and circumstances. Periodic reviews can help you check whether your plans and investments still reflect your needs and risk comfort.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">12</span><span>Is ongoing support available?</span></summary>
+              <p>Yes. You can contact us for continued discussions and financial education as your questions and circumstances change.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">13</span><span>What makes your approach different?</span></summary>
+              <p>We emphasize education, research, transparency, and disciplined long-term thinking rather than chasing trends or pressuring people to buy products.</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">14</span><span>How do I get started?</span></summary>
+              <p>Arrange a free initial consultation, share the questions you would like to discuss, and we can outline possible next steps. <a href="#contact">Contact InvestMart</a> to begin. 🚀</p>
+            </details>
+            <details class="faq-item">
+              <summary><span class="faq-number">15</span><span>Can I ask about investments I already hold?</span></summary>
+              <p>Yes. We can discuss general portfolio concepts and help you identify questions to consider. This is educational information, not personalized investment advice or a recommendation to buy or sell a specific security.</p>
+            </details>
+          </div>
+          <p class="faq-disclaimer mt-8 text-center text-xs leading-relaxed text-slate-500">Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. NISM certifications are examination credentials and do not, by themselves, constitute SEBI registration.</p>
         </div>
       </section>
       <section id="contact" class="py-24 bg-white border-t border-slate-200 relative overflow-hidden">
@@ -605,7 +716,7 @@
         <div class="container mx-auto px-6">
           <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
             <div
-              class="bg-secondary/20 border border-secondary/40 rounded-xl px-3 py-2 flex flex-col items-center gap-0.5">
+              class="border border-transparent rounded-xl px-3 py-2 flex flex-col items-center gap-0.5">
               <img alt="InvestMart" class="h-10 w-auto object-contain" src="images/SiteLogo.png"><span
                 class="text-[8px] font-bold tracking-widest text-secondary uppercase leading-none">Invest Smart with
                 InvestMart</span></div>
