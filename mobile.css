@@ -1,9 +1,82 @@
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .home-header-inner {
     height: auto;
     min-height: 72px;
     padding: 8px 12px;
     gap: 10px;
+  }
+
+  .home-desktop-nav,
+  .home-desktop-cta {
+    display: none !important;
+  }
+
+  .home-menu-toggle {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid hsl(var(--primary) / 0.2);
+    border-radius: 10px;
+    background: hsl(var(--primary));
+    cursor: pointer;
+  }
+
+  .home-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .home-menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .home-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .home-menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .home-mobile-nav:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 16px 16px;
+    border-top: 1px solid hsl(var(--primary) / 0.1);
+    background: white;
+    box-shadow: 0 12px 20px rgb(15 23 42 / 0.12);
+  }
+
+  .home-mobile-nav a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: hsl(var(--primary));
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .home-mobile-nav a:hover,
+  .home-mobile-nav a:focus-visible {
+    background: hsl(var(--secondary) / 0.18);
+    outline: none;
+  }
+
+  .home-mobile-nav a:last-child {
+    margin-top: 4px;
+    background: hsl(var(--primary));
+    color: white;
+    text-align: center;
   }
 
   .home-brand {
@@ -19,13 +92,6 @@
   .home-brand span {
     font-size: 7px;
     letter-spacing: 0.07em;
-  }
-
-  .home-contact-link {
-    min-height: 40px;
-    padding: 8px 10px;
-    font-size: 12px;
-    text-align: center;
   }
 
   .home-hero {
@@ -73,13 +139,25 @@
     gap: 8px;
   }
 
-  .home-contact-link {
-    padding-right: 8px;
-    padding-left: 8px;
-    font-size: 11px;
-  }
-
   .home-hero-title {
     font-size: 2.15rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-menu-toggle,
+  .home-mobile-nav {
+    display: none !important;
+  }
+
+  .home-desktop-nav {
+    flex-shrink: 0;
+    gap: clamp(16px, 2vw, 30px);
+    white-space: nowrap;
+  }
+
+  .home-desktop-cta {
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 }
